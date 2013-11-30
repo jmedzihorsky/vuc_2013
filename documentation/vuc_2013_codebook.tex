@@ -1,0 +1,146 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage{a4wide}
+
+\usepackage{datetime}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{float}
+
+\usepackage{charter}
+\usepackage[T1]{fontenc}
+
+
+\title{VUC 2013 Elections Dataset Codebook}
+\author{
+	Juraj Medzihorsky \\
+	\href{mailto:medzihorsky_juraj@ceu-budapest.edu}{\texttt{medzihorsky\_juraj@ceu-budapest.edu}}
+}
+\date{\ddmmyyyydate\today~at~\currenttime}
+
+\begin{document}
+
+\maketitle
+
+\noindent
+\textbf{Please cite the data \& codebook as:}
+
+\noindent
+Medzihorsky, Juraj. (2013) \textsl{VUC 2013 Elections Dataset}. version: \ddmmyyyydate\today~at~\currenttime
+
+\tableofcontents
+
+\section{Source}
+
+Official elections results were scraped from \href{http://osk2013.statistics.sk/}{http://osk2013.statistics.sk/}.
+
+
+\section{Elections}
+
+\begin{itemize}
+	\item	First round date:  9 November 2013
+	\item	Second round date:  23 November 2013.
+\end{itemize}
+
+The second round took place in the following five
+self-governing regions:
+
+\begin{itemize}
+	\item	Banska Bystrica		
+	\item	Bratislava
+	\item	Kosice
+	\item	Nitra
+	\item	Trnava
+\end{itemize}
+
+
+\section{Coding}
+
+Variable names are modular, see Table~\ref{tab:modules} for details.
+
+\begin{table}[H]\footnotesize
+	\label{tab:modules}
+	\caption{Basic variable name elements.}
+	\begin{center}
+		\begin{tabular}{ll}
+			\toprule
+			Element	& Description \\		
+			\midrule
+			\texttt{r1\_}	&	data specific to first round \\
+			\texttt{r2\_}	&	data specific to second round \\
+			\texttt{\_g\_}	&	data specific to gubernatorial elections; either \texttt{votes} or \texttt{name} \\			
+			\texttt{\_c\_}	&	data specific to council elections; either \texttt{votes} or \texttt{name} \\						
+			\texttt{name\_}	&	a name; if followed by a number a name of a candidate, otherwise a territorial name \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+\end{table}
+
+Table~2 shows variable name elements specific to turnout variables.
+Note that there is only one envelope also when there are two ballots -- governor and council
+-- in the first round.
+
+\begin{table}[H]\footnotesize
+	\label{tab:turn}
+	\caption{Variable name elements specific to turnout.}
+	\begin{center}
+		\begin{tabular}{ll}
+			\toprule
+			Element	& Description \\		
+			\midrule
+			\texttt{registered\_voters}	&	number of voters on rolls \\
+			\texttt{envelopes\_given}	&	number of envelopes picked-up by voters\\
+			\texttt{envelopes\_valid}	&	\texttt{\_governor} or \texttt{\_council} \\			
+			\bottomrule
+		\end{tabular}
+	\end{center}
+\end{table}
+
+
+
+Table~\ref{tab:trans} shows the English translations of Slovak terms used in the coding. 
+
+\begin{table}[H]\footnotesize
+	\label{tab:trans}
+	\caption{Slovak \& English terms.}
+	\begin{center}
+		\begin{tabular}{ll}
+			\toprule
+			Slovak & English \\
+			\midrule
+			samospravny kraj &	(self-governing) region \\
+			vyssi uzemno-spravny celok (VUC) & (self-governing) region \\
+			predseda VUC & governor \\
+			zastupitelstvo VUC & regional council \\
+			clen zatupitelstva VUC & councilor \\
+			kraj	&	region \\
+		 	obvod	&	district \\
+			obec 	&	municipality	\\
+			okrsok	&	ward/polling station \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+\end{table}
+
+
+Since ballot length varies widely across districts, the number of columns for candidate-related
+variables -- \texttt{\_name\_} \& \texttt{\_votes\_} -- is set to the district with the longest ballot.
+As a result there are plenty of \texttt{NA}. These are not missing data.
+
+
+
+
+
+
+
+
+\section{Files}
+
+There are two files:
+\begin{itemize}
+	\item	\href{https://github.com/jmedzihorsky/vuc_2013/blob/master/data/vuc_2013_ward.dat}{\texttt{vuc\_2013\_ward.dat}} where each row is a polling station (ward).
+	\item	\href{https://github.com/jmedzihorsky/vuc_2013/blob/master/data/vuc_2013_municipality.dat}{\texttt{vuc\_2013\_municipality.dat}} where each row is a municipality.		
+\end{itemize}
+Both files are in tab-separated format.
+
+\end{document}
