@@ -16,4 +16,4 @@ Municipality-level [data](/data/vuc_2013_municipality.dat)
 
 Please cite as
 
-Medzihorsky, Juraj (2013) _VUC 2013 elections dataset_ 
+Medzihorsky, Juraj (2013) _VUC 2013 Elections Dataset_ 
