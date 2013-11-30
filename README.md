@@ -10,8 +10,8 @@ municipality (_obec_) level as separate tab-separated files.
 
 [Codebook](/documentation/vuc_2013_codebook.pdf)
 
-Ward-level (polling station) [data](/data/vuc_2013_ward.dat)
-Municipality-level [data](/data/vuc_2013_municipality.dat)
+Ward-level (polling station) data is [here](/data/vuc_2013_ward.dat)
+and municipality-level data [here](/data/vuc_2013_municipality.dat).
 
 
 Please cite as
