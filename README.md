@@ -3,8 +3,12 @@ vuc_2013
 
 Election results from the 2013 Slovakian regional elections.
 Each self-governing region (a.k.a. _Vyssi uzemnospravny celok_ 
-or _Samospravny kraj_) has a directly elected governor and
-a council. 
+or _Samospravny kraj_) elects its governor and council. 
+
+Data is available on ward (polling station, _okrsok_) level and on
+municipality (_obec_) level as separate tab-separated files.
+
+Documentation will appear soon.
 
 Please cite as
 
