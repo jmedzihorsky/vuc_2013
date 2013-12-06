@@ -30,9 +30,12 @@ Medzihorsky, Juraj. (2013) \textsl{VUC 2013 Elections Dataset}. version: \ddmmyy
 
 \tableofcontents
 
-\section{Source}
+\section{Sources}
 
-Official elections results were scraped from \href{http://osk2013.statistics.sk/}{http://osk2013.statistics.sk/}.
+\begin{itemize}
+	\item	Official elections results were scraped from \href{http://osk2013.statistics.sk/}{http://osk2013.statistics.sk/}.
+	\item	Official census territorial codes were scraped from \href{http://www.sodbtn.sk/obce/abeceda.php}{http://www.sodbtn.sk/obce/abeceda.php}
+\end{itemize}
 
 
 \section{Elections}
@@ -54,9 +57,56 @@ self-governing regions:
 \end{itemize}
 
 
+Table 1 shows the English translations of selected Slovak terms. 
+
+\begin{table}[H]\footnotesize
+	\label{tab:trans}
+	\caption{Slovak \& English terms.}
+	\begin{center}
+		\begin{tabular}{ll}
+			\toprule
+			Slovak & English \\
+			\midrule
+			samospravny kraj 					& (self-governing) region 	\\
+			vyssi uzemno-spravny celok (VUC) 	& (self-governing) region 	\\
+			predseda VUC 						& governor 					\\
+			zastupitelstvo VUC 					& regional council 			\\
+			clen zatupitelstva VUC 				& councilor 				\\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+\end{table}
+
+
+
+\section{Territorial Units}
+
+
+\begin{table}[H]\footnotesize
+	\label{tab:territ}
+	\caption{Territorial units: Slovak \& English terms and counts.}
+	\begin{center}
+		\begin{tabular}{l l r}
+			\toprule
+			Slovak & English & $n$ \\
+			\midrule
+			kraj	&	region 							&	8		\\
+			okres	&	county 							&	79		\\
+		 	obvod	&	(electoral) district 			&	90		\\
+			obec 	&	municipality					&	2926	\\
+			okrsok	&	ward/precinct/polling station 	&	5932	\\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+\end{table}
+
+
+
+
+
 \section{Coding}
 
-Variable names are modular, see Table~\ref{tab:modules} for details.
+Variable names are modular, see Table 3 for details.
 
 \begin{table}[H]\footnotesize
 	\label{tab:modules}
@@ -71,6 +121,7 @@ Variable names are modular, see Table~\ref{tab:modules} for details.
 			\texttt{\_g\_}	&	data specific to gubernatorial elections; either \texttt{votes} or \texttt{name} \\			
 			\texttt{\_c\_}	&	data specific to council elections; either \texttt{votes} or \texttt{name} \\						
 			\texttt{name\_}	&	a name; if followed by a number a name of a candidate, otherwise a territorial name \\
+			\texttt{sodbtn\_}	&	territorial code used in censi \\
 			\bottomrule
 		\end{tabular}
 	\end{center}
@@ -98,29 +149,7 @@ Note that there is only one envelope also when there are two ballots -- governor
 
 
 
-Table~\ref{tab:trans} shows the English translations of Slovak terms used in the coding. 
 
-\begin{table}[H]\footnotesize
-	\label{tab:trans}
-	\caption{Slovak \& English terms.}
-	\begin{center}
-		\begin{tabular}{ll}
-			\toprule
-			Slovak & English \\
-			\midrule
-			samospravny kraj &	(self-governing) region \\
-			vyssi uzemno-spravny celok (VUC) & (self-governing) region \\
-			predseda VUC & governor \\
-			zastupitelstvo VUC & regional council \\
-			clen zatupitelstva VUC & councilor \\
-			kraj	&	region \\
-		 	obvod	&	district \\
-			obec 	&	municipality	\\
-			okrsok	&	ward/polling station \\
-			\bottomrule
-		\end{tabular}
-	\end{center}
-\end{table}
 
 
 Since ballot length varies widely across districts, the number of columns for candidate-related
